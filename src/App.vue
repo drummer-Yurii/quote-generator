@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <TheHeader title="The Anime Quoter" />
-    <TheQuote />
+    <TheQuote :quote="quote" />
   </div>
 </template>
 
@@ -13,7 +13,17 @@ export default {
   components: {
     TheHeader,
     TheQuote,
-  }
+  },
+  data() {
+    return {
+      quote: {
+        content: 'Content goes here',
+        anime: 'Naruto',
+        character: 'Madara'
+      },
+      quotes: [],
+    }
+  },
 }
 </script>
 

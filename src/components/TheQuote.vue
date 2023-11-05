@@ -1,14 +1,14 @@
 <template>
     <section class="quote">
         <div class="quote-content">
-            Content goes here...
+            {{ quote.content }}
         </div>
         <div class="quote-info">
             <div class="quote-anime">
-                Life
+                {{ quote.anime }}
             </div>
             <div class="quote-author">
-                Myself
+                {{ quote.character }}
             </div>
         </div>
     </section>
