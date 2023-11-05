@@ -5,30 +5,32 @@
     <div class="button-container">
       <button @click="getQuote">Generate</button>
     </div>
+    <QuoteList :quotes="quotes" />
   </div>
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue';
 import TheQuote from '@/components/TheQuote.vue';
+import QuoteList from './components/QuoteList.vue';
 export default {
   name: 'App',
   components: {
     TheHeader,
     TheQuote,
+    QuoteList,
   },
   data() {
     return {
-      quote: {
-        content: 'Content goes here',
-        anime: 'Naruto',
-        character: 'Madara'
-      },
+      quote: {},
       quotes: [],
     }
   },
   methods: {
     async getQuote() {
+      if (this.quote.content) {
+        this.quotes = [...this.quotes, this.quote];
+      }
       const data = await fetch('https://animechan.xyz/api/random').then(res => res.json());
       this.quote = {
         content: data.quote,
@@ -38,7 +40,7 @@ export default {
     }
   },
   created () {
-    // this.getQuote();
+    this.getQuote();
   },
 }
 </script>
