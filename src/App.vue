@@ -24,6 +24,19 @@ export default {
       quotes: [],
     }
   },
+  methods: {
+    async getQuote() {
+      const data = await fetch('https://animechan.xyz/api/random').then(res => res.json());
+      this.quote = {
+        content: data.quote,
+        anime: data.anime,
+        character: data.character
+      }
+    }
+  },
+  created () {
+    // this.getQuote();
+  },
 }
 </script>
 
