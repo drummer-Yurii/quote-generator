@@ -2,6 +2,9 @@
   <div class="app">
     <TheHeader title="The Anime Quoter" />
     <TheQuote :quote="quote" />
+    <div class="button-container">
+      <button @click="getQuote">Generate</button>
+    </div>
   </div>
 </template>
 
@@ -55,5 +58,30 @@ export default {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Fira Sans', sans-serif;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 32px;
+  margin: 64px auto;
+
+  button {
+    border: none;
+    outline: none;
+    background-color: var(--primary);
+    padding: 16px 32px;
+    border-radius: 99px;
+    color: var(--light);
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      background-color: var(--secondary);
+    }
+  }
 }
 </style>
