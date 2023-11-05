@@ -1,15 +1,18 @@
 <template>
   <div class="app">
     <TheHeader title="The Anime Quoter" />
+    <TheQuote />
   </div>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue'
+import TheHeader from './components/TheHeader.vue';
+import TheQuote from '@/components/TheQuote.vue';
 export default {
   name: 'App',
   components: {
     TheHeader,
+    TheQuote,
   }
 }
 </script>
